@@ -1,4 +1,4 @@
--- Data Cleanig 
+-- DATA CLEANING 
 
 SELECT *
 FROM layoffs;
@@ -93,6 +93,8 @@ SET `date` =  STR_TO_DATE(`date`, '%m/%d/%Y');
 ALTER TABLE layoffs_staging2
 MODIFY COLUMN `date` DATE;
 
+-- NULL VALUES OR BLANK VALUES
+
 SELECT *
 FROM layoffs_staging2
 WHERE industry IS NULL OR industry = '';
@@ -118,6 +120,8 @@ WHERE t1.industry IS NULL  AND t2.industry IS NOT NULL;
 
 SELECT *
 FROM layoffs_staging2;
+
+-- REMOVE IRRELEVENT DATA
 
 SELECT *
 FROM layoffs_staging2
